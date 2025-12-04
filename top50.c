@@ -183,7 +183,7 @@ int main()
 */
 
 //46: Sorting array using pointers (Done)
-
+/*
 #include <stdio.h>
 
 void sort(int *arrPtr, int arrSize)
@@ -220,7 +220,7 @@ int main()
 
     return 0;
 }
-
+*/
 
 //48: Add Two Complex Numbers Using Structures And Functions
 /*
@@ -236,6 +236,7 @@ int main()
 
 //50: Reverse a linked list iteratively
 /*
+
 #include <stdio.h>
 
 int main()
@@ -245,3 +246,114 @@ int main()
     return 0;
 }
 */
+
+// Struct
+/*
+#include <stdio.h>
+
+struct vector {
+    double x;
+    double y;
+};
+
+struct vector vector_difference (struct vector a, struct vector b) 
+{
+    struct vector c;
+    
+    c.x = a.x - b.x;
+    c.y = a.y - b.y;
+
+    return c;
+}
+
+int main()
+{
+    struct vector v1, v2, v3;
+    v1.x = 2.0;
+    v1.y = 3.0;
+
+    v2.x = 1.0;
+    v2.y = 1.5;
+
+    v3 = vector_difference(v1, v2);
+
+    printf("x = %f, y = %f", v3.x, v3.y);
+
+    return 0;
+}
+*/
+
+//Pointer
+/*
+#include <stdio.h>
+
+void changeValue(int *xP, int *yP)
+{
+    int temp = *xP;
+    *xP = *yP;
+    *yP = temp;
+}
+
+
+int main()
+{
+    int a = 2;
+    int *aPointer = &a;
+    double b = 0.8;
+    double *bPointer = &b;
+
+
+    printf("\"a\" valtozo cime: %p, erteke: %d\n", aPointer, a);
+    printf("\"b\" valtozo cime: %p, erteke: %f\n\n", bPointer, b);
+
+    *aPointer = 3;
+    *bPointer = 1.6;
+
+    printf("\"a\" valtozo cime: %p, erteke: %d\n", aPointer, a);
+    printf("\"b\" valtozo cime: %p, erteke: %f\n\n\n", bPointer, b);
+
+    int *xP, *yP;
+    int x = 1;
+    int y = 2;
+
+    xP = &x;
+    yP = &y;
+
+    printf("\"x\" valtozo cime: %p, erteke: %d\n", xP, x);
+    printf("\"y\" valtozo cime: %p, erteke: %d\n\n", yP, y);
+
+    changeValue(&x, &y);
+
+    printf("\"x\" valtozo cime: %p, erteke: %d\n", xP, x);
+    printf("\"y\" valtozo cime: %p, erteke: %d\n\n", yP, y);
+
+    return 0;
+}
+*/
+
+
+//Pointer tombbejaras
+
+#include <stdio.h>
+
+int main()
+{
+    int *p;
+    int arr[] = {1, 4, 2, 7, 3};
+    int arrSize = (sizeof(arr) / sizeof(arr[0]));
+
+    p = &arr[0];
+
+    *(p + 1) = 9;
+
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        printf("%d ", *(p + i));
+    }
+
+    return 0;
+}
+
+
+//Malloc, calloc

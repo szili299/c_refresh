@@ -333,7 +333,7 @@ int main()
 
 
 //Pointer tombbejaras
-
+/*
 #include <stdio.h>
 
 int main()
@@ -351,6 +351,34 @@ int main()
     {
         printf("%d ", *(p + i));
     }
+
+    return 0;
+}
+*/
+
+// Bitmuveletek
+
+#include <stdio.h>
+
+int main()
+{
+    unsigned char a = 16;        // 00011000
+    unsigned char c = 0;
+
+    // Bit shifteles
+    printf("Shift to left by 2 bit: %d", a);
+    c = a>>2;
+    printf(" >> %d", c);
+    
+    printf("\nShift to right by 2 bit: %d", a);
+    c = a<<2;
+    printf(" >> %d", c);
+
+    // Bitenkenti negalas
+    a = ~a;
+    printf("\nNegate of a: %d", a);
+
+
 
     return 0;
 }

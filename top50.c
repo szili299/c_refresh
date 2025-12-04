@@ -105,19 +105,34 @@ int main()
 }
 */
 
-//41: Searching elements in an array
-
+//41: Searching elements in an array (Done)
+/*
 #include <stdio.h>
+
+int search(int arr[], int arrSize, int scope)
+{
+    for (int i = 0; i < arrSize; i++)
+    {
+        if(arr[i] == scope)
+        {
+            return i;
+        }
+    }
+}
 
 int main()
 {
-    int array[] = {0, 1, 2, 3, 4, 5, 6, 7}
+    int array[] = {0, 1, 2, 3, 4, 5, 6, 7};
+    int scope = 5;
+    int arraySize = sizeof(array) / sizeof(array[0]);
 
-    printf("Hello World!");
+    int result = search(array, arraySize, scope);
+
+    printf("Index of searched number: %d", result);
 
     return 0;
 }
-
+*/
 
 //42: Binary search
 /*
@@ -167,17 +182,45 @@ int main()
 }
 */
 
-//46: Sorting array using pointers
-/*
+//46: Sorting array using pointers (Done)
+
 #include <stdio.h>
+
+void sort(int *arrPtr, int arrSize)
+{
+    int i, j;
+
+    for (i = 0; i < (arrSize - 1); i++)
+    {
+        for (j = (i + 1); j < arrSize; j++)
+        {
+            if(*(arrPtr + i) > *(arrPtr + j))
+            {
+                int temp = *(arrPtr + i);
+                *(arrPtr + i) = *(arrPtr + j); 
+                *(arrPtr + j) = temp;
+            }
+        }
+    }
+}
+
 
 int main()
 {
-    printf("Hello World!");
+    int array[] = {67, 47, 29, 88, 12, 44, 21, 15, 6, 12};
+    int arraySize = sizeof(array) / sizeof(array[0]);
+
+    sort(array, arraySize);
+
+    for (int i = 0; i < arraySize; i++)
+    {
+        printf("%d, ", array[i]);
+    }
+    
 
     return 0;
 }
-*/
+
 
 //48: Add Two Complex Numbers Using Structures And Functions
 /*
